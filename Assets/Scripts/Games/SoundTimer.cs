@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UdonLib.Commons;
 
-public class SoundTimer : MonoBehaviour {
+public class SoundTimer : UdonBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void SetMusicStream()
+    {
+
+    }
+
+    public void Stop()
+    {
+
+    }
+
 }
