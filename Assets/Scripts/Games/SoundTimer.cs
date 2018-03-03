@@ -3,12 +3,15 @@ using System;
 using UniRx;
 using UniRx.Triggers;
 using CrossRhythm.GameParameters;
-using CrossRhythm.GameStructs;
 
 public class SoundTimer : UdonBehaviour {
 
     private IObservable<Timing> _timer;
-    public IObservable<Timing> Timer;
+    public IObservable<Timing> Timer => _timer;
+
+    private Timing _timing;
+    private SongData _cachedSong;
+    private float _beatTime;
 
 	public void SetMusicStream(AudioPlayer player)
     {
@@ -19,15 +22,7 @@ public class SoundTimer : UdonBehaviour {
     {
         return this.UpdateAsObservable()
             .TakeWhile(_ => player.IsGameEnd == false)
-            .Select(_ => player.Source.time)
-            .DistinctUntilChanged()
-            .Select(x => SongTiming(player.Song, x));
-            
-    }
-
-    private Timing SongTiming(SongData song, float time)
-    {
-        return new Timing();
+            .Select(_ => Music.Just);
     }
 
 }

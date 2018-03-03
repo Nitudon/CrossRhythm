@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c691d203c97e71c469b3d29e141059ac, type: 3}
+  m_Name: SongData
+  m_EditorClassIdentifier: 
+  _jacket: {fileID: 0}
+  _clip: {fileID: 8300000, guid: fe696ada0e612e34dad754c79e2513af, type: 3}
+  _bpm: 160
+  _time: 236
+  _unitPerBeat: 4
+  _unitPerBar: 16
