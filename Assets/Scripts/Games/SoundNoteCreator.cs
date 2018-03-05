@@ -1,16 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UdonLib.Commons;
+using CrossRhythm.GameEnums;
+using Zenject;
 
-public class SoundNoteCreator : MonoBehaviour {
+public class SoundNoteCreator : UdonBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [Inject]
+    private SoundTimer _soundTimer;
+
+    protected override void Start()
+    {
+        base.Start();
+        
+    }
+
+    private void Create()
+    {
+
+    }
+
 }
