@@ -6,12 +6,18 @@ public class SoundNote : UdonBehaviour {
     private NotePlace _place;
     public NotePlace Place => _place;
 
-    private float _timing;
-    public float Timing => _timing;
+    private Timing _timing;
+    public Timing Timing => _timing;
 
     private SoundNoteImage _noteImage;
 
-    public SoundNote(SoundNoteImage noteImage, float timing)
+    public static SoundNote Create(SoundNoteImage noteImage, Timing timing)
+    {
+        SoundNote note = new SoundNote(noteImage, timing);
+        return note;
+    }
+
+    public SoundNote(SoundNoteImage noteImage, Timing timing)
     {
         _noteImage = noteImage;
         _timing = timing;
