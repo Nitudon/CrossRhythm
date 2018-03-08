@@ -27,4 +27,8 @@ public class SongData : ScriptableObject {
     private uint _unitPerBar = 16;
     public uint UnitPerBar => _unitPerBar;
 
+    [SerializeField]
+    private int _maxNoteNum;
+    public int MaxNoteNum => _maxNoteNum;
+
 }

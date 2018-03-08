@@ -15,4 +15,15 @@ namespace CrossRhythm.GameEnums{
         LOWER_RIGHT,//右下
     }
 
+    /// <summary>
+    /// タイミング判定
+    /// </summary>
+    public enum JudgeGrade
+    {
+        PERFECT,//ジャスト
+        GREAT,
+        GOOD,
+        MISS,//0点
+    }
+
 }

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ScoreUIPresenter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    private ScoreUIView _view;
+
+    private void Initialize()
+    {
+
+    }
+
+    private void ObserveModel()
+    {
+
+    }
 }
