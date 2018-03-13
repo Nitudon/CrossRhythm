@@ -26,4 +26,15 @@ namespace CrossRhythm.GameEnums{
         MISS,//0点
     }
 
+    /// <summary>
+    /// 難易度
+    /// </summary>
+    public enum Difficulty
+    {
+        EASY,
+        NORMAL,
+        HARD,
+        EXTREME,
+    }
+
 }
