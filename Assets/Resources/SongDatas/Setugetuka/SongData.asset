@@ -17,3 +17,4 @@ MonoBehaviour:
   _time: 236
   _unitPerBeat: 4
   _unitPerBar: 16
+  _maxNoteNum: 0
