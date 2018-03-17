@@ -9,7 +9,6 @@ public class ScoreCalculator{
         var greatRate = greatNum * GameParameters.JUDGE_COEFFICIENT[CrossRhythm.GameEnums.JudgeGrade.GREAT];
         var goodRate = goodNum * GameParameters.JUDGE_COEFFICIENT[CrossRhythm.GameEnums.JudgeGrade.GOOD];;
 
-
         return (int)((GameParameters.MAX_SCORE / maxCombo) * (perfectRate + greatRate + goodRate));
     }
 }

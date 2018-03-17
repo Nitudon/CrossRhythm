@@ -4,6 +4,7 @@ using UnityEngine;
 using CrossRhythm.GameStructs;
 using UdonLib.Commons;
 using UniRx;
+using Zenject;
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Music))]
@@ -17,6 +18,9 @@ public class AudioPlayer : UdonBehaviour {
     private SongData _song;
     public SongData Song => _song;
 
+    [Inject]
+    private SoundTimer _timer;
+
     private bool _isGameEnd = false;
     public bool IsGameEnd => _isGameEnd;
 
@@ -25,8 +29,8 @@ public class AudioPlayer : UdonBehaviour {
         Initialize();
         _source.clip = _song.Clip;
         _source.Play();
-        GetComponent<SoundTimer>().SetMusicStream(this);
-        GetComponent<SoundTimer>().Timer.Subscribe(x => Debug.Log(x));
+        _timer.SetMusicStream(this);
+        _timer.Timer.Subscribe(x => Debug.Log(x));
     }
 
     private void Initialize()
