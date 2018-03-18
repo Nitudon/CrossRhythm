@@ -6,23 +6,28 @@ using CrossRhythm.GameParameters;
 
 public class SoundTimer : UdonBehaviour {
 
-    private IObservable<Timing> _timer;
-    public IObservable<Timing> Timer => _timer;
+    private IObservable<Unit> _timer;
+    public IObservable<Unit> Timer => _timer;
 
-    private Timing _timing;
+    public IObservable<Timing> MusicTimeObservable => _timer.Select(_ => Music.Just);
+    public IObservable<double> GameTimeObservable => _timer.Select(_ => Music.TimeSecFromJust);
+
+    private float _gameSpeed = 1.0f;
+
     private SongData _cachedSong;
     private float _beatTime;
 
 	public void SetMusicStream(AudioPlayer player)
     {
-        _timer = MusicTimeObservable(player);
+        SetGameTimer(player);
     }
 
-    private IObservable<Timing> MusicTimeObservable(AudioPlayer player)
+    private void SetGameTimer(AudioPlayer player)
     {
-        return this.UpdateAsObservable()
+        _timer = this.UpdateAsObservable()
             .TakeWhile(_ => player.IsGameEnd == false)
-            .Select(_ => Music.Just);
+            .Publish()
+            .RefCount();
     }
 
 }
