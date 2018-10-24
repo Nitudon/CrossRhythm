@@ -1,5 +1,7 @@
 # CrossRhythm
 
+mobile rhythm game
+
 ## Use License
 
 CrossRhythmはUniRxを用いたライブラリをベースに制作しています
